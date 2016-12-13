@@ -9,7 +9,9 @@ class Message extends React.Component {
       <div className="message" style={messageStyles}>
         <h3 style={{'display':'inline-block','marginRight':24,'fontFamily':'sans-serif'}}>{this.props.title}</h3>
         <em>{this.props.message}</em>
-        <img src={this.props.src}/>
+        <img 
+          src={this.props.src}
+          style={{'maxWidth':400}}/>
       </div>
     );
   }

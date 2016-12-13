@@ -1,5 +1,6 @@
-var React = require('react');
-var Message = require('./Message');
+import React from 'react';
+import Message from './Message';
+
 
 const App = React.createClass({
   getInitialState(){
