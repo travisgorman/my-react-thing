@@ -21463,39 +21463,114 @@
 /* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
+	var Message = __webpack_require__(179);
 
 	var App = React.createClass({
-	  displayName: "App",
+	  displayName: 'App',
 	  getInitialState: function getInitialState() {
 	    return {
 	      name: "Travis",
 	      status: "Working"
 	    };
 	  },
+
+	  styles: {
+	    'fontFamily': 'sans-serif',
+	    'textAlign': 'center',
+	    'marginTop': '4rem'
+	  },
 	  render: function render() {
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
 	      React.createElement(
-	        "h3",
-	        null,
-	        "My name is ",
-	        this.state.name,
-	        ", and the status of this app is:"
+	        'div',
+	        { style: this.styles },
+	        React.createElement(
+	          'h3',
+	          null,
+	          'The status of this app is:'
+	        ),
+	        React.createElement(
+	          'h1',
+	          { style: { 'color': 'green', 'fontSize': 46 } },
+	          this.state.status
+	        )
 	      ),
-	      React.createElement(
-	        "h1",
-	        null,
-	        this.state.status
-	      )
+	      React.createElement(Message, {
+	        title: 'Swiggity Swooty',
+	        message: 'I\'m comin\' for that booty!',
+	        src: 'http://www.deathmetal.org/wp-content/uploads/trump-two-thumbs-up.jpg' })
 	    );
 	  }
 	});
 
 	module.exports = App;
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(32);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var messageStyles = { 'width': 500, 'margin': '0 auto', 'textAlign': 'center' };
+	var imgStyles = { 'maxWidth': 400 };
+
+	var Message = function (_React$Component) {
+	  _inherits(Message, _React$Component);
+
+	  function Message() {
+	    _classCallCheck(this, Message);
+
+	    return _possibleConstructorReturn(this, (Message.__proto__ || Object.getPrototypeOf(Message)).apply(this, arguments));
+	  }
+
+	  _createClass(Message, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'message', style: messageStyles },
+	        _react2.default.createElement(
+	          'h3',
+	          { style: { 'display': 'inline-block', 'marginRight': 24, 'fontFamily': 'sans-serif' } },
+	          this.props.title
+	        ),
+	        _react2.default.createElement(
+	          'em',
+	          null,
+	          this.props.message
+	        ),
+	        _react2.default.createElement('img', { src: this.props.src })
+	      );
+	    }
+	  }]);
+
+	  return Message;
+	}(_react2.default.Component);
+
+	module.exports = Message;
 
 /***/ }
 /******/ ]);
