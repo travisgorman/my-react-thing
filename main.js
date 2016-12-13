@@ -21465,10 +21465,17 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var Message = __webpack_require__(179);
+	var _react = __webpack_require__(1);
 
-	var App = React.createClass({
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Message = __webpack_require__(179);
+
+	var _Message2 = _interopRequireDefault(_Message);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var App = _react2.default.createClass({
 	  displayName: 'App',
 	  getInitialState: function getInitialState() {
 	    return {
@@ -21483,24 +21490,24 @@
 	    'marginTop': '4rem'
 	  },
 	  render: function render() {
-	    return React.createElement(
+	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      React.createElement(
+	      _react2.default.createElement(
 	        'div',
 	        { style: this.styles },
-	        React.createElement(
+	        _react2.default.createElement(
 	          'h3',
 	          null,
 	          'The status of this app is:'
 	        ),
-	        React.createElement(
+	        _react2.default.createElement(
 	          'h1',
 	          { style: { 'color': 'green', 'fontSize': 46 } },
 	          this.state.status
 	        )
 	      ),
-	      React.createElement(Message, {
+	      _react2.default.createElement(_Message2.default, {
 	        title: 'Swiggity Swooty',
 	        message: 'I\'m comin\' for that booty!',
 	        src: 'http://www.deathmetal.org/wp-content/uploads/trump-two-thumbs-up.jpg' })
@@ -21562,7 +21569,9 @@
 	          null,
 	          this.props.message
 	        ),
-	        _react2.default.createElement('img', { src: this.props.src })
+	        _react2.default.createElement('img', {
+	          src: this.props.src,
+	          style: { 'maxWidth': 400 } })
 	      );
 	    }
 	  }]);
