@@ -21481,14 +21481,8 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      name: "Travis",
-	      status: "Working"
+	      status: "WORKING"
 	    };
-	  },
-
-	  styles: {
-	    'fontFamily': 'sans-serif',
-	    'textAlign': 'center',
-	    'marginTop': '4rem'
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(
@@ -21496,27 +21490,61 @@
 	      null,
 	      _react2.default.createElement(
 	        'div',
-	        { style: this.styles },
+	        { className: 'status' },
 	        _react2.default.createElement(
-	          'h3',
+	          'h2',
+	          null,
+	          'Hello, I\'m ',
+	          this.state.name,
+	          '.'
+	        ),
+	        _react2.default.createElement(
+	          'ul',
+	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'If you see my name above, my JSX is being transpiled and rendered.'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'If this ',
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'hl' },
+	              'word'
+	            ),
+	            ' is big and pink, my SASS is compiling to CSS.'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'If you see the Queen below, my image loaders and asset handlers are working.'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'h2',
 	          null,
 	          'The status of this app is:'
 	        ),
 	        _react2.default.createElement(
 	          'h1',
-	          { style: { 'color': 'green', 'fontSize': 46 } },
+	          null,
 	          this.state.status
 	        )
 	      ),
 	      _react2.default.createElement(_Message2.default, {
-	        title: 'Swiggity Swooty',
+	        title: 'Swiggity Swoo',
 	        message: 'I\'m comin\' for that booty!',
-	        src: 'http://www.deathmetal.org/wp-content/uploads/trump-two-thumbs-up.jpg' })
+	        src: '/assets/queenTrump.jpg' })
 	    );
 	  }
 	});
 
 	module.exports = App;
+
+	// http://i.imgur.com/hO0W73C.jpg
 
 /***/ },
 /* 179 */
@@ -21542,11 +21570,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(180);
-
-	var messageStyles = { 'width': 500, 'margin': '0 auto', 'textAlign': 'center' };
-	var imgStyles = { 'maxWidth': 400 };
-
 	var Message = function (_React$Component) {
 	  _inherits(Message, _React$Component);
 
@@ -21561,10 +21584,10 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'message', style: messageStyles },
+	        { className: 'message' },
 	        _react2.default.createElement(
 	          'h3',
-	          { style: { 'display': 'inline-block', 'marginRight': 24, 'fontFamily': 'sans-serif' } },
+	          null,
 	          this.props.title
 	        ),
 	        _react2.default.createElement(
@@ -21572,9 +21595,7 @@
 	          null,
 	          this.props.message
 	        ),
-	        _react2.default.createElement('img', {
-	          src: this.props.src,
-	          style: { 'maxWidth': 400 } })
+	        _react2.default.createElement('img', { src: this.props.src })
 	      );
 	    }
 	  }]);
@@ -21619,7 +21640,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background: #FC4756;\n  font-family: sans-serif; }\n  body h1 {\n    font-size: 56px;\n    color: #4D8BD9; }\n", ""]);
+	exports.push([module.id, "body {\n  background: #EEEEEE;\n  font-family: sans-serif;\n  margin: 0;\n  padding: 0; }\n  body h1 {\n    color: #34BD87;\n    margin-top: 0;\n    margin-bottom: 0; }\n  body h2 {\n    color: #333333; }\n  body h3 {\n    display: inline-block;\n    margin-right: 24px;\n    font-size: sans-serif; }\n  body ul li {\n    line-height: 2;\n    list-style-type: none; }\n\nimg {\n  max-width: 400px; }\n\n.status {\n  font-family: sans-serif;\n  text-align: center;\n  margin-top: 2.5rem; }\n\n.message {\n  width: 500px;\n  margin: 0 auto;\n  text-align: center; }\n\n.hl {\n  font-size: 24px;\n  font-weight: 400;\n  color: #FC4756; }\n", ""]);
 
 	// exports
 
