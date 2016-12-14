@@ -25,7 +25,7 @@ const App = React.createClass({
         <Message 
           title="Swiggity Swooty" 
           message="I'm comin' for that booty!"
-          src='app/assets/queenTrump.jpg' />
+          src='http://i.imgur.com/vNLaE9v.jpg' />
       </div>
       
     );

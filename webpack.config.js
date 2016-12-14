@@ -7,12 +7,17 @@ var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 
 module.exports = {
   entry: __dirname + '/app/index.js',
+  devServer: {
+    inline: true,
+    contentBase: './build',
+    port: 8080
+  },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015']
         }
@@ -23,8 +28,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=20000',
-        include: PATHS.images
+        loader: 'url-loader?limit=200000',
       }
     ]
   },
