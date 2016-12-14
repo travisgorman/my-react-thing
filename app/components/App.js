@@ -6,27 +6,26 @@ const App = React.createClass({
   getInitialState(){
     return {
       name: "Travis",
-      status: "Working",
+      status: "WORKING",
     };
   },
-  styles: {
-    'fontFamily':'sans-serif',
-    'textAlign':'center',
-    'marginTop':'4rem'
-  },
-  render(){
+  render() {
     return (
       <div>
-        <div style={this.styles}>
-          <h3>The status of this app is:</h3>
-          <h1 style={{ 'color':'green','fontSize':46 }}>
-            {this.state.status}
-          </h1>
+        <div className="status">
+          <h2>Hello, I'm {this.state.name}.</h2>
+          <ul>
+            <li>If you see my name above, my JSX is being transpiled and rendered.</li>
+            <li>If this <span className="hl">word</span> is big and pink, my SASS is compiling to CSS.</li>
+            <li>If you see the Queen below, my image loaders and asset handlers are working.</li>
+          </ul>
+          <h2>The status of this app is:</h2>
+          <h1>{this.state.status}</h1>
         </div>
         <Message 
           title="Swiggity Swooty" 
           message="I'm comin' for that booty!"
-          src='http://www.deathmetal.org/wp-content/uploads/trump-two-thumbs-up.jpg' />
+          src='app/assets/queenTrump.jpg' />
       </div>
       
     );
@@ -34,3 +33,5 @@ const App = React.createClass({
 });
 
 module.exports = App;
+
+// http://i.imgur.com/hO0W73C.jpg

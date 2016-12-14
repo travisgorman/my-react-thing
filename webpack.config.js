@@ -13,6 +13,18 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+        query: {
+          presets: ['react', 'es2015']
+        }
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=20000',
+        include: PATHS.images
       }
     ]
   },

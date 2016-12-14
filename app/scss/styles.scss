@@ -1,0 +1,44 @@
+@import 'variables';
+
+
+body {
+	background: $bg;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	h1 {
+		color: $green;
+		margin-top: 0;
+	    margin-bottom: 0;
+	}
+	h2 {
+		color: $black;
+	}
+	h3 {
+		display: inline-block;
+		margin-right: 24px;
+		font-size: sans-serif;
+	}
+	ul li {
+		line-height: 2;
+		list-style-type: none;
+	}
+}
+img {
+	max-width: 400px;
+}
+.status {
+	font-family: sans-serif;
+	text-align: center;
+	margin-top: 2.5rem;
+}
+.message {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center
+}
+.hl {
+	font-size: 24px;
+	font-weight: 400;
+	color: $hl;
+}
