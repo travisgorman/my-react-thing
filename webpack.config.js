@@ -9,7 +9,7 @@ module.exports = {
   entry: __dirname + '/app/index.js',
   devServer: {
     inline: true,
-    contentBase: './build',
+    contentBase: './docs',
     port: 8080
   },
   module: {
@@ -34,7 +34,7 @@ module.exports = {
   },
   output: {
     filename: 'main.js',
-    path: __dirname + '/build'
+    path: __dirname + '/docs'
   },
   plugins: [ HTMLWebpackPluginConfig ]
 };

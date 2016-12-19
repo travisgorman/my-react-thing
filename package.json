@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "build": "webpack",
+    "prebuild": "if [ ! -d app ]; then mkdir app; fi && if [ ! -f app/index.html ]; then printf '<!DOCTYPE html>%s\n<html>\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<title></title>\n\t\t<link media=\"screen\" href=\"styles.css\" rel=\"stylesheet\"/>\n\t</head>\n\t<body>\n\n\t\t<script src=\"scripts.js\" charset=\"utf-8\"></script>\n\t</body>\n</html>' >> app/index.html; fi && if [ ! -d app/scripts ]; then mkdir app/scripts; fi && if [ ! -f app/scripts/entry.js ]; then touch app/scripts/entry.js; fi && if [ ! -d app/scripts/components ]; then mkdir app/scripts/components; fi && if [ ! -d app/scss ]; then mkdir app/scss; fi && if [ ! -f app/scss/styles.scss ]; then touch app/scss/styles.scss; fi && if [ ! -f app/scss/_variables.scss ]; then touch app/scss/_variables.scss; fi && if [ ! -d app/assets ]; then mkdir app/assets; fi && if [ ! -d docs ]; then mkdir docs; fi && if [ ! -f docs/index.html ]; then printf '<!DOCTYPE html>%s\n<html>\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<title></title>\n\t\t<link media=\"screen\" href=\"styles.css\" rel=\"stylesheet\"/>\n\t</head>\n\t<body>\n\n\t\t<script src=\"scripts.js\" charset=\"utf-8\"></script>\n\t</body>\n</html>' >> docs/index.html; fi && if [ ! -f docs/scripts.js ]; then touch docs/scripts.js; fi && if [ ! -f README.md ]; then printf '#A TG React Webpack Build Thing' >> README.md; fi",
     "start": "webpack-dev-server",
     "deploy": "git subtree push --prefix build origin gh-pages"
   },
@@ -28,9 +29,11 @@
     "babel-loader": "^6.2.9",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "backbone": "^1.3.3",
     "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
+    "jquery": "^3.1.1",
     "node-sass": "^4.0.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
